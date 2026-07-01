@@ -1,1 +1,185 @@
-# xged5256shert
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+html,body{
+height:100%;
+overflow:hidden;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+background:url('https://s13.gifyu.com/images/bdIcd.png') center center/cover no-repeat;
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:2;
+}
+
+.content{
+text-align:center;
+color:#fff;
+padding:20px;
+}
+
+h1{
+font-size:35px;
+margin-bottom:15px;
+text-shadow:0 0 15px #000;
+}
+
+p{
+font-size:18px;
+margin-bottom:30px;
+}
+
+/* Tombol */
+.btn{
+position:relative;
+display:inline-block;
+padding:18px 45px;
+border-radius:50px;
+background:linear-gradient(45deg,#ff0000,#ff5500,#ff0000);
+color:#fff;
+font-size:22px;
+font-weight:bold;
+text-decoration:none;
+overflow:hidden;
+box-shadow:0 0 15px red,0 0 35px #ff3300;
+animation:pulse 1.5s infinite;
+}
+
+.btn:before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:50%;
+height:100%;
+background:rgba(255,255,255,.7);
+transform:skewX(-25deg);
+animation:shine 2s infinite;
+}
+
+.btn:active{
+transform:scale(.95);
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 10px red;}
+50%{box-shadow:0 0 35px #ff3300,0 0 60px red;}
+100%{box-shadow:0 0 10px red;}
+}
+
+@keyframes shine{
+100%{left:160%;}
+}
+
+/* Love */
+.hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:1;
+}
+
+.heart{
+position:absolute;
+bottom:-40px;
+color:#ff4d6d;
+animation:fly linear forwards;
+text-shadow:0 0 10px #ff4d6d;
+}
+
+@keyframes fly{
+0%{
+transform:translateY(0) scale(.5) rotate(0deg);
+opacity:0;
+}
+15%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh) scale(1.5) rotate(360deg);
+opacity:0;
+}
+}
+
+@media(max-width:600px){
+h1{font-size:28px;}
+p{font-size:16px;}
+.btn{
+font-size:18px;
+padding:16px 35px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="overlay">
+<div class="content">
+
+<h1>Welcome to private dating</h1>
+
+<p>There are many single girls here who don't spend money. When you are in, you can watch the latest movies 🎥💯 and you can meet any girl you like. ⬇️Join here⬇️.</p>
+
+<a class="btn" href="[https://paula4478.thompson633.lat/WFVNVSxsb3Nwb2xsb3MsamFjaW50aGUyNzU3NTkzLE1OWA](https://paula-87518.ajsce.vip/b/3f-KdUNQ_HdmdD-a22
+)">
+❤️ CONTINUE ❤️
+</a>
+
+</div>
+</div>
+
+<script>
+const container=document.getElementById("hearts");
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*25)+"px";
+heart.style.animationDuration=(5+Math.random()*5)+"s";
+
+container.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+}
+
+setInterval(createHeart,250);
+</script>
+
+</body>
+</html>
